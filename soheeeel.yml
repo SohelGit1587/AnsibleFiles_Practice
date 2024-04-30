@@ -1,0 +1,20 @@
+---
+- name: MyTest Playbook
+  hosts: all
+  become: true
+  tasks: 
+  - name: install a packge
+    yum: 
+     name: tree
+     state: installed
+
+  - name: install httpd
+    yum: 
+     name: https
+     state: installed
+    ignore_errors: yes
+
+  - name: install git
+    yum: 
+     name: git
+     state: installed  

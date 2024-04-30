@@ -1,0 +1,13 @@
+---
+- name: My Test Playbook
+  hosts: all
+  become: true
+  tasks: 
+  - name: installing apache2 package
+    yum: 
+     name: apache2
+     status: installed
+  - name: start apache
+    service: 
+     name: apache2
+     state: reload

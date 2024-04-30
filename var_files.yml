@@ -1,0 +1,14 @@
+---
+- name: mytestplaybook
+  hosts: all
+  become: true
+  vars_files:
+  - varfiletes.yml
+  tasks: 
+  - name: creating user {{user1}}
+    user: 
+     name: "{{user1}}"
+  - name: creating user {{user2}}
+    user:
+     name: "{{user2}}"
+

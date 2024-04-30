@@ -1,0 +1,53 @@
+---
+- name: My Test playbook
+  hosts: webservers
+  become: true
+  tasks:
+  - name: create user in nodes
+    user: 
+      name: sohelsania
+  - name: create file
+    file:
+      name: /home/ansadmin/sohelfile
+      state: touch
+  - name: remove file
+    file:
+      name: /home/ansadmin/sohelfile
+      state: absent
+  - name: create dir1
+    file:
+      name: /home/ansadmin/sohelfilw
+      state: directory
+  - name: removing dir
+    file:
+      name: /home/ansadmin/sohelfilw
+      state: absent
+  - name: copy file/folder
+    copy:
+      src: /home/ansadmin/taj
+      dest: /home/ansadmin
+      mode: 0600
+  - name: remove folder
+    file:
+      name: /home/ansadmin/taj
+      state: directory
+  - name: installing a package
+    yum:
+      name: tree
+      state: installed
+  - name: install httpd package
+    yum:
+      name: httpd
+      state: installed
+  - name: start httpd service now
+    service: 
+      name: httpd
+      state: started
+  - name: stop httpd service
+    service: 
+      name: httpd
+      state: stopped
+  - name: remove package
+    yum:
+      name: httpd
+      state: remove 

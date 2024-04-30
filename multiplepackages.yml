@@ -1,0 +1,9 @@
+---
+- name: Mytestplaybook
+  hosts: all
+  become: true
+  tasks: 
+  - name: installing multiple packages
+    yum: 
+     name: ['git', 'docker']
+     state: absent

@@ -1,0 +1,19 @@
+---
+- name: mytestplaybook
+  hosts: all
+  become: true
+  tasks: 
+  - name: create multiple users
+    user: name='{{ item }}' state=present
+    with_items:
+       - sonu
+       - ania
+       - baby
+       - mammah
+       - babbu
+       - mammahaaaji
+       - ladduuu
+       - milkyyyyy
+       - wifeyyyyyyyyy
+       - merejaanuu
+       - sanuuuuu
